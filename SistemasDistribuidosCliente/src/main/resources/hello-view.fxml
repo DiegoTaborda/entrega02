@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemasdistribuidos.cliente.ClientController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Label fx:id="pageTitle" text="Conectar a servidor">
+      <font>
+         <Font name="Fira Code Medium" size="22.0" />
+      </font>
+       <VBox.vgrow>
+           <Priority fx:constant="NEVER" />
+       </VBox.vgrow>
+   </Label>
+
+    <HBox fx:id="connectBox" alignment="CENTER" managed="true" spacing="10.0" visible="true">
+        <Label fx:id="connectionIPLabel" text="I.P." />
+        <TextField fx:id="connectionIP" text="192.168.1.5" />
+        <Label fx:id="connectionPortLabel" text="Porta" />
+        <TextField fx:id="connectionPort" text="23555" />
+        <Button fx:id="helloButton" onAction="#onHelloButtonClick" text="Conectar" />
+    </HBox>
+
+    <HBox fx:id="loginBox" alignment="CENTER" managed="false" spacing="10.0" visible="false">
+        <Label text="Email" />
+        <TextField fx:id="emailField" />
+        <Label text="Senha" />
+        <PasswordField fx:id="passwordField" />
+        <Button fx:id="loginButton" onAction="#onLoginClick" text="Login" />
+        <Button fx:id="selfRegisterButton" onAction="#onSelfRegisterClick" text="Autocadastro" />
+    </HBox>
+   
+   <VBox fx:id="registerBox" managed="false" visible="false" spacing="10">
+      <children>
+           <Label text="Nome" />
+           <TextField fx:id="register_name" />
+           <Label text="Email" />
+           <TextField fx:id="register_email" />
+           <Label text="Senha" />
+           <PasswordField fx:id="register_password" />
+         <HBox alignment="CENTER" spacing="10.0">
+            <children>
+                <Button fx:id="goToLoginButton" onAction="#goToLogin" text="Ir para o Login" />
+                <Button fx:id="registerButton" onAction="#onRegisterClick" text="Cadastrar" />
+            </children>
+          </HBox>
+      </children>
+   </VBox>
+
+   	<VBox fx:id="profileBox" alignment="CENTER" managed="false" spacing="10.0" visible="false">	   	
+		<HBox alignment="CENTER">
+	        <Button fx:id="mydataButton" mnemonicParsing="false" onAction="#onMyDataClick" text="Ver meus dados" />
+	        <Button managed="false" visible="false" fx:id="listUsersButton" mnemonicParsing="false" onAction="#onListUsersClick" text="Ver todos os usuarios" />
+	        <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onLogoutClick" text="Logout" />
+	        <Button fx:id="selfDeleteButton" mnemonicParsing="false" onAction="#onSelfDeleteClick" text="Excluir conta" />
+	        <Button fx:id="changeUserButton" mnemonicParsing="false" onAction="#onChangeUserClick" text="Alterar conta" />
+	    </HBox>
+	    <!-- Add the text box below the buttons -->
+	    <HBox fx:id="deleteUserBox" alignment="CENTER">
+	    	<TextField fx:id="deleteUserId" PromptText="ID do usuario"/>
+	    	<Button fx:id="deleteUserButton" mnemonicParsing="false" onAction="#onDeleteUserClick" text="Deletar Usuario"/>
+	    </HBox>
+	    <VBox fx:id="listBox">
+		</VBox>	  		
+    </VBox>
+    
+    <VBox fx:id="changeBox" managed="false" visible="false" spacing="10">
+      <children>
+			<Label text="ID" />
+           	<TextField fx:id="change_id" />
+	        <Label text="Nome" />
+	        <TextField fx:id="change_name" />
+	        <Label text="Email" />
+	        <TextField fx:id="change_email" />
+	        <Label text="Senha" />
+	        <PasswordField fx:id="change_password" />
+         <HBox alignment="CENTER" spacing="10.0">
+            <children>
+                <Button fx:id="goToProfile" onAction="#ongoToProfile" text="Voltar" />
+                <Button fx:id="changeButton" onAction="#onChangeClick" text="Alterar" />
+            </children>
+         </HBox>
+      </children>
+   </VBox>	      	
+    	
+</VBox>
